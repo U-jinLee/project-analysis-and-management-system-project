@@ -16,7 +16,7 @@ public class TeamMember {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @ManyToOne
