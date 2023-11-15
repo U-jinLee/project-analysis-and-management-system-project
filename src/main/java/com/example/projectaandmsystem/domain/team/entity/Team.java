@@ -2,8 +2,11 @@ package com.example.projectaandmsystem.domain.team.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "team")
 @Entity
@@ -22,6 +25,7 @@ public class Team {
     @Column(name = "description")
     private String description;
 
+    @Builder
     public Team(String name, String teamLeaderEmail, String description) {
         this.name = name;
         this.teamLeaderEmail = teamLeaderEmail;

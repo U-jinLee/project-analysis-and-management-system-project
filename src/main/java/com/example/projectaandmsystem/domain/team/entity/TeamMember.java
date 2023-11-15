@@ -34,4 +34,12 @@ public class TeamMember {
         this.team = team;
     }
 
+    public static TeamMember createTeamLeader(Account account, Team team) {
+        return TeamMember.builder()
+                .status(Status.LEADER)
+                .account(account)
+                .team(team)
+                .build();
+    }
+
 }
