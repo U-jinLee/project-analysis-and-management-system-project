@@ -1,7 +1,10 @@
 package com.example.projectaandmsystem.domain.team.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "team")
 @Entity
 public class Team {
@@ -19,4 +22,9 @@ public class Team {
     @Column(name = "description")
     private String description;
 
+    public Team(String name, String teamLeaderEmail, String description) {
+        this.name = name;
+        this.teamLeaderEmail = teamLeaderEmail;
+        this.description = description;
+    }
 }
