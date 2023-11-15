@@ -1,13 +1,13 @@
-package com.example.skeleton;
+package com.example.projectaandmsystem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SkeletonApplication {
+public class ProjectAAndMSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SkeletonApplication.class, args);
+        SpringApplication.run(ProjectAAndMSystemApplication.class, args);
     }
 
 }
