@@ -1,1 +1,13 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
 
+jwt:
+  secret: Thissecretkeymustbelongerthan32charactersbecarefulwhenyouchangeit
+  access:
+    token-validity-in-seconds: 86400000
+  refresh:
+    token-validity-in-seconds: 2592000000
