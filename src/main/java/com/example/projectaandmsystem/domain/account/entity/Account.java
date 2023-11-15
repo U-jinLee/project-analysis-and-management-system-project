@@ -3,8 +3,10 @@ package com.example.projectaandmsystem.domain.account.entity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "account")
 @Entity
