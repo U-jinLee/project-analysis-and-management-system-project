@@ -5,8 +5,10 @@ import com.example.projectaandmsystem.domain.team.model.Status;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "team_member")
 @Entity
@@ -37,6 +39,14 @@ public class TeamMember {
     public static TeamMember createTeamLeader(Account account, Team team) {
         return TeamMember.builder()
                 .status(Status.LEADER)
+                .account(account)
+                .team(team)
+                .build();
+    }
+
+    public static TeamMember inviteTeamMember(Account account, Team team) {
+        return TeamMember.builder()
+                .status(Status.INVITE)
                 .account(account)
                 .team(team)
                 .build();
