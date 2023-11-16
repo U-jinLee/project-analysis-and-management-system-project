@@ -32,10 +32,10 @@ public class TeamApiController {
     }
 
     @PatchMapping("/{teamId}/team-members/{id}/accept")
-    public ResponseEntity<TeamMemberInviteDto.Response> acceptTeam(@PathVariable("teamId") long teamId,
-                                                                   @PathVariable("id") long memberId) {
+    public ResponseEntity<Object> acceptTeam(@PathVariable("teamId") long teamId,
+                                             @PathVariable("id") long memberId) {
         teamAcceptService.accept(teamId, memberId);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
 }

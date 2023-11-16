@@ -111,7 +111,7 @@ class TeamApiControllerTest extends IntegrationTest {
         mvc.perform(patch("/api/teams/{teamId}/team-members/{id}/accept", team.getId(), teamMember.getId())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isCreated());
+                .andExpect(status().isOk());
 
         TeamMember changedTeamMember = teamMemberRepo.findById(teamMember.getId()).get();
         Assertions.assertEquals(Status.MEMBER, changedTeamMember.getStatus());
