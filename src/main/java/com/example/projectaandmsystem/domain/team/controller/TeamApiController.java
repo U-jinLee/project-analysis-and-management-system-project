@@ -2,6 +2,7 @@ package com.example.projectaandmsystem.domain.team.controller;
 
 import com.example.projectaandmsystem.domain.team.dto.TeamMemberInviteDto;
 import com.example.projectaandmsystem.domain.team.dto.TeamPostDto;
+import com.example.projectaandmsystem.domain.team.service.TeamAcceptService;
 import com.example.projectaandmsystem.domain.team.service.TeamInviteService;
 import com.example.projectaandmsystem.domain.team.service.TeamPostService;
 import jakarta.validation.Valid;
@@ -17,6 +18,7 @@ public class TeamApiController {
 
     private final TeamPostService teamPostService;
     private final TeamInviteService teamInviteService;
+    private final TeamAcceptService teamAcceptService;
 
     @PostMapping
     public ResponseEntity<TeamPostDto.Response> createTeam(@RequestBody @Valid TeamPostDto.Request request) {
@@ -27,6 +29,13 @@ public class TeamApiController {
     public ResponseEntity<TeamMemberInviteDto.Response> inviteTeamMember(@PathVariable("teamId") long teamId,
                                                                          @RequestBody @Valid TeamMemberInviteDto.Request request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(teamInviteService.invite(teamId, request));
+    }
+
+    @PatchMapping("/{teamId}/team-members/{id}/accept")
+    public ResponseEntity<TeamMemberInviteDto.Response> acceptTeam(@PathVariable("teamId") long teamId,
+                                                                   @PathVariable("id") long memberId) {
+        teamAcceptService.accept(teamId, memberId);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }

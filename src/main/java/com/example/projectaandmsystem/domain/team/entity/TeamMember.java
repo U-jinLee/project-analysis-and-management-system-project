@@ -52,4 +52,8 @@ public class TeamMember {
                 .build();
     }
 
+    public void accept() {
+        this.status = Status.MEMBER;
+    }
+
 }
