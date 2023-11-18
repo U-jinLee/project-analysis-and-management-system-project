@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "Kanban")
@@ -25,6 +28,9 @@ public class Kanban {
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
+
+    @OneToMany(mappedBy = "kanban")
+    private List<Ticket> tickets = new ArrayList<>();
 
     @Builder
     public Kanban(String name, Integer rowNumber, Team team) {
