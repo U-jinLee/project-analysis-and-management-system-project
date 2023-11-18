@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "team")
@@ -24,6 +26,9 @@ public class Team {
 
     @Column(name = "description")
     private String description;
+
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Kanban> kanbans;
 
     @Builder
     public Team(String name, String teamLeaderEmail, String description) {
