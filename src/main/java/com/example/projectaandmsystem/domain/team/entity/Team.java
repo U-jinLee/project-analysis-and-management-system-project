@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -27,8 +28,8 @@ public class Team {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Kanban> kanbans;
+    @OneToMany(mappedBy = "team")
+    private List<Kanban> kanbans = new ArrayList<>();
 
     @Builder
     public Team(String name, String teamLeaderEmail, String description) {
