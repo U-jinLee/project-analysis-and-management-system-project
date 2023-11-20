@@ -1,5 +1,6 @@
 package com.example.projectaandmsystem.domain.team.entity;
 
+import com.example.projectaandmsystem.domain.team.dto.TeamKanbanUpdateDto;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -37,6 +38,14 @@ public class Kanban {
         this.name = name;
         this.rowNumber = rowNumber;
         this.team = team;
+    }
+
+    public void changeKanbanNameTo(TeamKanbanUpdateDto.Request request) {
+        this.name = request.getName();
+    }
+
+    public void swapRowNumberTo(int rowNumber) {
+        this.rowNumber = rowNumber;
     }
 
 }

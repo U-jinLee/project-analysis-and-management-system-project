@@ -1,38 +1,37 @@
-![logo](https://static.wanted.co.kr/images/events/3178/58ac3248.jpg)
+<div align="center">
+  <img src="https://static.wanted.co.kr/images/events/3178/58ac3248.jpg" width="500">
+</div>
 
-# 프로젝트명
-프로젝트 관련 설명
+# 프로젝트 분석 및 관리 툴
+ 칸반보드 기반 칸반 티켓을 만들어 일정을 관리하는 `Backend API`입니다.
 
 <br/>
 
-## Table of Contents
+## 목차
 - [개요](#개요)
-- [Skils](#skils)
+- [Skill](#Skill)
 - [Installation](#Installation)
 - [Running Tests](#running-tests)
 - [API Reference](#api-reference)
 - [프로젝트 진행 및 이슈 관리](#프로젝트-진행-및-이슈-관리)
 - [구현과정(설계 및 의도)](#구현과정(설계-및-의도))
 - [TIL 및 회고](#til-및-회고)
-- [Authors](#authors)
-- [References](#references)
 
 <br/>
-
 
 ## 개요
-이 서비스가 어떠한 배경에서 발견한 문제상황을 해결하기 위해 시작되었는지 및 어떠한 방법으로 해당 문제를 해결하려 하는지 등 ... To use a badge:
-- Via Github
-    1. Press `Ctrl` + `f` on your keyboard, to bring out the search modal.
-    1. Enter the name of the badge you need.
-    1. Copy the appropriate `![Name](link)` element and paste it in your Markdown file (e.g. README.md)
-- You could also visit the live site at [ileriayo.github.io/markdown-badges/](https://ileriayo.github.io/markdown-badges/)
+해당 서비스는 프로젝트 및 작업 관리를 위한 직관적이고 유연한 도구로,<br>
+팀 간 협업과 업무 효율성을 향상을 목표로 합니다.
 
-<br/>
+`주요기능`
+> 1. 유저는 본 사이트에 들어와 회원가입을 통해 서비스를 이용합니다.
+> 2. 칸반보드(Kanban Board) 기능을 사용하여 프로젝트 진행을 관리합니다.
+> 3. `Ticket`을 통해 팀원은 자신의 작업을 관리합니다.
+> 4. `팀장`은 소속 팀원들의 작업량을 다양한 지표로 확인합니다.
 
+<br>
 
-## Skils
-가상환경: ![Static Badge](https://img.shields.io/badge/Conda-green)<br/>
+## Skill
 언어 및 프레임워크: ![Static Badge](https://img.shields.io/badge/JAVA-17-green) ![Static Badge](https://img.shields.io/badge/Spring_boot-REST-green)<br/>
 데이터 베이스: ![Static Badge](https://img.shields.io/badge/Postgresql-9.2.4-blue) <br/>
 배포 : ![Static Badge](https://img.shields.io/badge/Docker-039BC6) ![Static Badge](https://img.shields.io/badge/AWS-EC2-orange) ![Static Badge](https://img.shields.io/badge/Github-Actions-black)  <br/> ETC : ![Static Badge](https://img.shields.io/badge/Celery-black) ![Static Badge](https://img.shields.io/badge/Redis-red)
@@ -201,51 +200,6 @@ To run tests, run the following command
 
 
 ## TIL 및 회고
-
-<details>
-<summary>Django ORM 조회 시 발생하는 00 버그 - click</summary>
-
-- 의존성 문제
-    1. Press `Ctrl` + `f` on your keyboard, to bring out the search modal.
-    2. Enter the name of the badge you need.
-    3. Copy the appropriate `![Name](link)` element and paste it in your Markdown file (e.g. README.md)
-- 00가 00 하는 문제
-
-</details>
-
-<details>
-<summary>Django ORM 조회 시 발생하는 00 버그 - click</summary>
-
-- 의존성 문제
-    1. Press `Ctrl` + `f` on your keyboard, to bring out the search modal.
-    2. Enter the name of the badge you need.
-    3. Copy the appropriate `![Name](link)` element and paste it in your Markdown file (e.g. README.md)
-
-- 00가 00 하는 문제
-
-</details>
-
-(또는 블로그, 노션 등 링크 연동)
-
-- [Django ORM 조회 시 발생하는 00 버그 발생](#google.com)
-- [00 서비스 개발 회고록](#google.com)
+- [Stream() 정렬하기](https://diligent-mangosteen-06d.notion.site/Stream-eed618c7385b4078875984b6d57917f8?pvs=4)
 
 <br/>
-
-
-## Authors
-
-- [@user1](https://www.github.com/2)
-- [@user2](https://www.github.com/2)
-- [@user3](https://www.github.com/2)
-
-<br/>
-
-
-## References
-
-- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-
-

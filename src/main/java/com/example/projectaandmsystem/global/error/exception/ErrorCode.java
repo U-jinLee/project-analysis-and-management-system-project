@@ -30,7 +30,10 @@ public enum ErrorCode {
     // Auth
     NOT_EXISTS_AUTH(400, "ATH001", "권한 정보가 없습니다"),
     // TeamMember
-    ALREADY_INVITED_MEMBER(400, "MEM001", "이미 초대된 멤버입니다");
+    ALREADY_INVITED_MEMBER(400, "MEM001", "이미 초대된 멤버입니다"),
+    // Kanban
+    TICKET_EXIST(400, "KAN001", "칸반에 티켓이 존재합니다"),
+    ROW_NUMBER_OVER(400, "KAN002", "칸반의 행 번호가 초과되었습니다");
 
     private final String code;
     private final String message;
