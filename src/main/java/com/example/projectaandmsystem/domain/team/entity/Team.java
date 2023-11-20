@@ -28,7 +28,7 @@ public class Team {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
     private List<Kanban> kanbans = new ArrayList<>();
 
     @Builder

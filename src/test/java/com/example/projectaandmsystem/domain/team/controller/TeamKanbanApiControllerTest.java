@@ -4,6 +4,7 @@ import com.example.projectaandmsystem.IntegrationTest;
 import com.example.projectaandmsystem.domain.account.entity.Account;
 import com.example.projectaandmsystem.domain.account.repository.AccountRepository;
 import com.example.projectaandmsystem.domain.team.dto.TeamKanbanCreateDto;
+import com.example.projectaandmsystem.domain.team.dto.TeamKanbanRowNumberUpdateDto;
 import com.example.projectaandmsystem.domain.team.dto.TeamKanbanUpdateDto;
 import com.example.projectaandmsystem.domain.team.entity.Kanban;
 import com.example.projectaandmsystem.domain.team.entity.Team;
@@ -157,5 +158,46 @@ class TeamKanbanApiControllerTest extends IntegrationTest {
                 .andDo(print())
                 .andExpect(status().isNoContent());
 
+    }
+
+    @Test
+    void 칸반_순서_변경() throws Exception {
+        Account account = accountRepo.save(
+                Account.builder()
+                        .email("yoojinlee.dev@gmail.com")
+                        .name("이유진")
+                        .password("1q2w3e4r!")
+                        .build()
+        );
+
+        Team team = teamRepo.save(Team.builder()
+                .name("Test team")
+                .teamLeaderEmail(account.getEmail())
+                .description("Team make test")
+
+                .build());
+
+        Kanban kanban = kanbanRepo.save(Kanban
+                .builder()
+                .name("To do")
+                .rowNumber(1)
+                .team(team)
+                .build());
+
+        Kanban changeKanban = kanbanRepo.save(Kanban
+                .builder()
+                .name("Progress")
+                .rowNumber(2)
+                .team(team)
+                .build());
+
+        TeamKanbanRowNumberUpdateDto.Request request =
+                TeamKanbanRowNumberUpdateDto.Request.from(changeKanban.getRowNumber());
+
+        mvc.perform(patch("/api/teams/{teamId}/kanbans/{id}/change-order", team.getId(), kanban.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andDo(print())
+                .andExpect(status().isOk());
     }
 }

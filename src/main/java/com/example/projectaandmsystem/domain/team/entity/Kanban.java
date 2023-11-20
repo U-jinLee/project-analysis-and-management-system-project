@@ -44,4 +44,8 @@ public class Kanban {
         this.name = request.getName();
     }
 
+    public void swapRowNumberTo(int rowNumber) {
+        this.rowNumber = rowNumber;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.example.projectaandmsystem.domain.team.controller;
 
 import com.example.projectaandmsystem.domain.team.dto.TeamGetKanbansDto;
 import com.example.projectaandmsystem.domain.team.dto.TeamKanbanCreateDto;
+import com.example.projectaandmsystem.domain.team.dto.TeamKanbanRowNumberUpdateDto;
 import com.example.projectaandmsystem.domain.team.dto.TeamKanbanUpdateDto;
 import com.example.projectaandmsystem.domain.team.service.TeamColumnCreateService;
 import com.example.projectaandmsystem.domain.team.service.TeamKanbanDeleteService;
@@ -46,6 +47,14 @@ public class TeamKanbanApiController {
                                               @PathVariable(name = "id") long id,
                                               @RequestBody @Valid TeamKanbanUpdateDto.Request request) {
         teamKanbanUpdateService.updateName(teamId, id, request);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @PatchMapping("/{id}/change-order")
+    public ResponseEntity<Object> patchKanbanRowNumber(@PathVariable(name = "teamId") long teamId,
+                                              @PathVariable(name = "id") long id,
+                                              @RequestBody @Valid TeamKanbanRowNumberUpdateDto.Request request) {
+        teamKanbanUpdateService.updateRowNumber(teamId, id, request);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
