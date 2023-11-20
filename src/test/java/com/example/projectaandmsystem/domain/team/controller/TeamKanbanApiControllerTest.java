@@ -4,6 +4,7 @@ import com.example.projectaandmsystem.IntegrationTest;
 import com.example.projectaandmsystem.domain.account.entity.Account;
 import com.example.projectaandmsystem.domain.account.repository.AccountRepository;
 import com.example.projectaandmsystem.domain.team.dto.TeamKanbanCreateDto;
+import com.example.projectaandmsystem.domain.team.dto.TeamKanbanUpdateDto;
 import com.example.projectaandmsystem.domain.team.entity.Kanban;
 import com.example.projectaandmsystem.domain.team.entity.Team;
 import com.example.projectaandmsystem.domain.team.repository.KanBanRepository;
@@ -124,4 +125,37 @@ class TeamKanbanApiControllerTest extends IntegrationTest {
 
     }
 
+    @Test
+    void 칸반명_바꾸기() throws Exception {
+        Account account = accountRepo.save(
+                Account.builder()
+                        .email("yoojinlee.dev@gmail.com")
+                        .name("이유진")
+                        .password("1q2w3e4r!")
+                        .build()
+        );
+
+        Team team = teamRepo.save(Team.builder()
+                .name("Test team")
+                .teamLeaderEmail(account.getEmail())
+                .description("Team make test")
+
+                .build());
+
+        Kanban kanban = kanbanRepo.save(Kanban
+                .builder()
+                .name("To do")
+                .rowNumber(0)
+                .team(team)
+                .build());
+
+        TeamKanbanUpdateDto.Request request = TeamKanbanUpdateDto.Request.from("Progress");
+
+        mvc.perform(patch("/api/teams/{teamId}/kanbans/{id}", team.getId(), kanban.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andDo(print())
+                .andExpect(status().isNoContent());
+
+    }
 }

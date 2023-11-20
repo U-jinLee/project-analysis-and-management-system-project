@@ -2,9 +2,11 @@ package com.example.projectaandmsystem.domain.team.controller;
 
 import com.example.projectaandmsystem.domain.team.dto.TeamGetKanbansDto;
 import com.example.projectaandmsystem.domain.team.dto.TeamKanbanCreateDto;
+import com.example.projectaandmsystem.domain.team.dto.TeamKanbanUpdateDto;
 import com.example.projectaandmsystem.domain.team.service.TeamColumnCreateService;
 import com.example.projectaandmsystem.domain.team.service.TeamKanbanDeleteService;
 import com.example.projectaandmsystem.domain.team.service.TeamKanbanQueryService;
+import com.example.projectaandmsystem.domain.team.service.TeamKanbanUpdateService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ public class TeamKanbanApiController {
     private final TeamColumnCreateService teamColumnCreateService;
     private final TeamKanbanQueryService teamKanbanQueryService;
     private final TeamKanbanDeleteService teamKanbanDeleteService;
+    private final TeamKanbanUpdateService teamKanbanUpdateService;
 
     @PostMapping
     public ResponseEntity<TeamKanbanCreateDto.Response> createKanban(@PathVariable(name = "teamId") Long teamId,
@@ -35,6 +38,14 @@ public class TeamKanbanApiController {
     public ResponseEntity<Object> deleteKanban(@PathVariable(name = "teamId") long teamId,
                                                @PathVariable(name = "id") long id) {
         teamKanbanDeleteService.delete(teamId, id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Object> patchKanban(@PathVariable(name = "teamId") long teamId,
+                                              @PathVariable(name = "id") long id,
+                                              @RequestBody @Valid TeamKanbanUpdateDto.Request request) {
+        teamKanbanUpdateService.updateName(teamId, id, request);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
