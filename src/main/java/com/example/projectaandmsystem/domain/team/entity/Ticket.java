@@ -1,5 +1,6 @@
 package com.example.projectaandmsystem.domain.team.entity;
 
+import com.example.projectaandmsystem.domain.team.dto.KanbanTicketUpdateDto;
 import com.example.projectaandmsystem.domain.team.model.Tag;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -59,4 +60,11 @@ public class Ticket {
         this.teamMember = teamMember;
     }
 
+    public void update(KanbanTicketUpdateDto.Request request, TeamMember teamMember) {
+        this.name = request.getName();
+        this.tag = request.getTag();
+        this.amountOfWork = request.getAmountOfWork();
+        this.deadline = request.getDeadline();
+        this.teamMember = teamMember;
+    }
 }

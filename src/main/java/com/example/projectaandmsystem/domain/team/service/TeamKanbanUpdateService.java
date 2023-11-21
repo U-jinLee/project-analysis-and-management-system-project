@@ -52,7 +52,7 @@ public class TeamKanbanUpdateService {
         Integer originalRowNumber = kanban.getRowNumber();
         Integer willChangeRowNumber = request.getRowNumber();
 
-        log.info("Kanban's size::{}",kanbans.size());
+        log.info("Kanban's size::{}", kanbans.size());
         if(kanbans.size() < willChangeRowNumber) throw new RowNumberOverException();
 
         Kanban willChangeKanban = kanbans.stream().filter(k ->
