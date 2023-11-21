@@ -30,7 +30,7 @@ public class Kanban {
     @JoinColumn(name = "team_id")
     private Team team;
 
-    @OneToMany(mappedBy = "kanban")
+    @OneToMany(mappedBy = "kanban", cascade = CascadeType.ALL)
     private List<Ticket> tickets = new ArrayList<>();
 
     @Builder
@@ -48,4 +48,7 @@ public class Kanban {
         this.rowNumber = rowNumber;
     }
 
+    public void addTicket(Ticket ticket) {
+        tickets.add(ticket);
+    }
 }
