@@ -2,6 +2,7 @@ package com.example.projectaandmsystem.domain.team.controller;
 
 import com.example.projectaandmsystem.domain.team.dto.KanbanTicketPostDto;
 import com.example.projectaandmsystem.domain.team.dto.KanbanTicketUpdateDto;
+import com.example.projectaandmsystem.domain.team.service.KanbanTicketDeleteService;
 import com.example.projectaandmsystem.domain.team.service.KanbanTicketPostService;
 import com.example.projectaandmsystem.domain.team.service.KanbanTicketUpdateService;
 import jakarta.validation.Valid;
@@ -17,6 +18,7 @@ public class KanbanTicketApiController {
 
     private final KanbanTicketPostService ticketPostService;
     private final KanbanTicketUpdateService ticketUpdateService;
+    private final KanbanTicketDeleteService ticketDeleteService;
 
     @PostMapping
     public ResponseEntity<KanbanTicketPostDto.Response> postTicket(@RequestHeader("Authorization") String accessToken,
@@ -33,6 +35,14 @@ public class KanbanTicketApiController {
         ticketUpdateService.put(accessToken, kanbanId, ticketId, request);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> putTicket(@RequestHeader("Authorization") String accessToken,
+                                            @PathVariable("kanbanId") long kanbanId,
+                                            @PathVariable("id") long ticketId) {
+        ticketDeleteService.delete(accessToken, kanbanId, ticketId);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 
