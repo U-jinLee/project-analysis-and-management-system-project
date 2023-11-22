@@ -33,7 +33,9 @@ public enum ErrorCode {
     ALREADY_INVITED_MEMBER(400, "MEM001", "이미 초대된 멤버입니다"),
     // Kanban
     TICKET_EXIST(400, "KAN001", "칸반에 티켓이 존재합니다"),
-    ROW_NUMBER_OVER(400, "KAN002", "칸반의 행 번호가 초과되었습니다");
+    ROW_NUMBER_OVER(400, "KAN002", "칸반의 행 번호가 초과되었습니다"),
+    // Ticket
+    CANT_DELETE_TICKET(400, "TCKT001", "티켓 삭제 권한이 없음");
 
     private final String code;
     private final String message;
