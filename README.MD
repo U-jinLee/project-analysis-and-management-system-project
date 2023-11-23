@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://static.wanted.co.kr/images/events/3178/58ac3248.jpg" width="500">
+  <img src="" width="500">
 </div>
 
 # 프로젝트 분석 및 관리 툴
@@ -69,132 +69,15 @@ To run tests, run the following command
 
 <br/>
 
-
 ## API Reference
-
-<details>
-<summary>Get all items - click</summary>
-
-#### Request
-```javascript
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Response
-```http
-    HTTP/1.1 200
-    Content-Type: application/json
-
-    [{
-        "id": 10,
-        "name": "shirt",
-        "color": "red",
-        "price": "$23"
-    },...
-    ]
-```
-</details>
-<details>
-<summary>Get all items - click</summary>
-
-#### Request
-```javascript
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Response
-```http
-    HTTP/1.1 200
-    Content-Type: application/json
-
-    [{
-        "id": 10,
-        "name": "shirt",
-        "color": "red",
-        "price": "$23"
-    },...
-    ]
-```
-</details>
-<details>
-<summary>Get all items - click</summary>
-
-#### Request
-```javascript
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Response
-```http
-    HTTP/1.1 200
-    Content-Type: application/json
-
-    [{
-        "id": 10,
-        "name": "shirt",
-        "color": "red",
-        "price": "$23"
-    },...
-    ]
-```
-</details>
+> [![POST_MAN](https://img.shields.io/badge/POSTMAN_-CLICK🖱-%23000000.svg?style=for-the-badge&logo=postman&logoColor=white)](https://documenter.getpostman.com/view/18383272/2s9YeBct5f#intro)<br>
+> ![Project_](src/main/resources/static/img/api_reference.png)
 
 <br/>
-
 
 ## 프로젝트 진행 및 이슈 관리
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://bow-hair-db3.notion.site/cdb6eb37500b4580a80252ea3d7c3963?pvs=4)
-
-<br/>
-
-
-## 구현과정(설계 및 의도)
-(노션, 블로그 등의 페이지로 안내 가능)
-<details>
-<summary>유저 모델과 실행결과 모델관의 관계 설정 시 00 고려 - click</summary>
-
-- 의존성 문제
-    1. Press `Ctrl` + `f` on your keyboard, to bring out the search modal.
-    2. Enter the name of the badge you need.
-    3. Copy the appropriate `![Name](link)` element and paste it in your Markdown file (e.g. README.md)
-- 00가 00 하는 문제
-
-</details>
-
-<details>
-<summary>00 구현 시 동시성 고려 - click</summary>
-
-- 의존성 문제
-    1. Press `Ctrl` + `f` on your keyboard, to bring out the search modal.
-    2. Enter the name of the badge you need.
-    3. Copy the appropriate `![Name](link)` element and paste it in your Markdown file (e.g. README.md)
-- 00가 00 하는 문제
-
-</details>
-
-<details>
-<summary>RESTful API 설계 - click</summary>
-
-- 의존성 문제
-    1. Press `Ctrl` + `f` on your keyboard, to bring out the search modal.
-    2. Enter the name of the badge you need.
-    3. Copy the appropriate `![Name](link)` element and paste it in your Markdown file (e.g. README.md)
-- 00가 00 하는 문제
-
-</details>
 
 <br/>
 
